@@ -62,7 +62,7 @@ namespace TxtDownLoader
                 using (StreamReader reader = new StreamReader(respStream, Encoding.GetEncoding("GBK")))
                 {
                     var result = reader.ReadToEnd(); //result就是返回值
-                                                     /// txt203988.shtml
+                                                   
                     int indexF = urlPath.LastIndexOf("/");
                     int indexE = urlPath.LastIndexOf(".");
                     string tradeTime = DateTime.Now.ToString("MMddHHmmss");
