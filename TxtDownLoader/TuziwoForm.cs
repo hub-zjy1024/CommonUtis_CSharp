@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TxtDownLoader.presenter;
 using TxtDownLoader.utils;
-
+using System.Web;
 namespace TxtDownLoader
 {
     public partial class TuziwoForm : Form, TuziwoPresenter.ITuziwoView
@@ -74,12 +74,15 @@ namespace TxtDownLoader
 
         }
         public void showFinalBox(string msg) {
-            //textBox1.Text = msg;
+            textBox1.Text =textBox1.Text+"\n"+"获取完成："+ msg;
             button2.Enabled = true;
         }
 
         public  string UrlEncode(string str)
         {
+            ///工程名上-> 右键,Add Reference-> 选择System.Web->OK
+            //HttpUtility.UrlEncode(str, Encoding.UTF8);
+            //UrlEncode m=new UrlEncode
             return str.Replace("@", "%40");
         }
 

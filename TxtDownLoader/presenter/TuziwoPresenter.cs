@@ -222,6 +222,10 @@ namespace TxtDownLoader.presenter
                 HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
                 CookieContainer cookies = new CookieContainer();
                 string domin = httpWebRequest.Host;
+                int portIndex = domin.IndexOf(":");
+                if (portIndex > 0) {
+                    domin = domin.Substring(0, portIndex);
+                }
                 cookies.Add(new Cookie("uid", uid, "/", domin));
                 cookies.Add(new Cookie("email", email, "/", domin));
                 cookies.Add(new Cookie("key", key, "/", domin));

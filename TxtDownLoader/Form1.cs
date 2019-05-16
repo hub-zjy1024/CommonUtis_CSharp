@@ -41,7 +41,7 @@ namespace TxtDownLoader
             //mouseKeyHook1.OnMouseActivity += new MouseEventHandler(Form1_MouseDown);
             //new EventHandler(tb_downloadDlay_KeyPress);
             //    this.button1.Click += new System.EventHandler(this.button1_Click);
-            Application.AddMessageFilter(this);
+            //Application.AddMessageFilter(this);
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
