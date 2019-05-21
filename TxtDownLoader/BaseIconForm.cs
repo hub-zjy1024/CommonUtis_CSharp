@@ -13,5 +13,8 @@ namespace TxtDownLoader
         {
             this.Icon =Properties.Resources.tools_128px_1216269_easyicon_net;
         }
+        public void ShowMsg(string msg) {
+            MessageBox.Show(this,msg);
+        }
     }
 }

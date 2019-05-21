@@ -97,6 +97,7 @@ namespace TxtDownLoader
                         }
                         try
                         {
+
                             WebResponse wResp2 = WebRequest.Create(nUrl).GetResponse();
                             Stream respStream2 = wResp2.GetResponseStream();
                             using (StreamReader reader2 = new StreamReader(respStream2, Encoding.GetEncoding("GBK")))
@@ -115,7 +116,7 @@ namespace TxtDownLoader
                             DateTime time2 = DateTime.Now;
                             TimeSpan time = time2 - time1;
                             time1 = time2;
-                            errorBuilder.AppendLine(string.Format("{0}下载失败!!距离上次失败时间为{2} 地址为:{1}", title, nUrl, time.TotalMilliseconds / (float)1000));
+                            errorBuilder.AppendLine(string.Format("{0}下载失败!!距离上次失败时间为{2} 地址为:{1}，errmsg={3}", title, nUrl, time.TotalMilliseconds / (float)1000,ex.Message));
                             createForm.BeginInvoke(new Action<string>(createForm.updateState), errorBuilder.ToString());
                         }
                         m++;
