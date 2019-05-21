@@ -33,10 +33,10 @@ namespace TxtDownLoader
         }
         public NovelDownLoader(string urlPath, string pages, Form1 createForm, int downloadDelay) : this(urlPath, pages, createForm)
         {
-            DownloadDelay = downloadDelay;
+            this.downloadDelay = downloadDelay;
         }
 
-        public int DownloadDelay { get => downloadDelay; set => downloadDelay = value; }
+        //public int DownloadDelay { get => downloadDelay; set => downloadDelay = value; }
 
         public string DownloadTxt()
         {
@@ -107,7 +107,7 @@ namespace TxtDownLoader
                                 byte[] b = System.Text.Encoding.UTF8.GetBytes(tempStr + "\n");
                                 fs.Write(b, 0, b.Length);
                             }
-                            Thread.Sleep(DownloadDelay);
+                            Thread.Sleep(this.downloadDelay);
                             createForm.BeginInvoke(new Action<string>(createForm.showFinalBox),"下载到"+ i + "/" + totalCount);
                         }
                         catch (Exception ex)
