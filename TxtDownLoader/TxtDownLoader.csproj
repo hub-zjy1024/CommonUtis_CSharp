@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="utils\AppPathUrl.cs" />
     <Compile Include="utils\encrypt\HexUtil.cs" />
+    <Compile Include="utils\GlobalExHandler.cs" />
     <Compile Include="utils\hooks\KeyAndMouseHook.cs" />
     <Compile Include="utils\hooks\KeyboardHooker.cs" />
     <Compile Include="utils\hooks\MouseEventHooker.cs" />
